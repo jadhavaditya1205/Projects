@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ER Diagram in Table Format</title>
+    <style>
+     
+
+        body {
+            background-color: #030a; /* Light green background */
+        }
+        table {
+            width: 90%;
+            margin: 10px 0;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+        <a href="indexpage.html">Home</a>
+        <a href="secondpage.html">Introduction & Objective</a>
+        <a href="thirdpage.html">About Us</a>
+        <a href="fourthpage.html">Data Model</a>
+        <a href="fifth.html">Store Visit</a>
+    </nav>
+
+    <h2>ER Diagram for Store, Employee, Customer, and Order</h2>
+    
+    <h3>Entities and Attributes</h3>
+
+    <!-- Store Table -->
+    <table>
+        <caption><strong>Store</strong></caption>
+        <tr>
+            <th>Attribute</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>Store_ID</td>
+            <td>INT (Primary Key)</td>
+            <td>143512</td>
+        </tr>
+        <tr>
+            <td>Store_Name</td>
+            <td>VARCHAR</td>
+            <td>National Decoration And Suppliers</td>
+        </tr>
+        <tr>
+            <td>Location</td>
+            <td>VARCHAR</td>
+            <td>sr.no.281,Porwal Rd,Near Silver Mist,Lohegaon,Pune</td>
+        </tr>
+        <tr>
+            <td>Store_Type</td>
+            <td>VARCHAR</td>
+            <td>Mirror And Decoration Shop</td>
+        </tr>
+    </table>
+    <br><br>
+
+    <!-- Employee Table -->
+    <table>
+        <caption><strong>Employee</strong></caption>
+        <tr>
+            <th>Attribute</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>Employee_ID</td>
+            <td>INT (Primary Key)</td>
+            <td>101</td>
+        </tr>
+        <tr>
+            <td>Store_ID</td>
+            <td>INT (Foreign Key)</td>
+            <td>143512</td>
+        </tr> 
+        <tr>
+            <td>Name</td>
+            <td>VARCHAR</td>
+            <td>Rajkumar</td>
+        </tr>
+        <tr>
+            <td>Position</td>
+            <td>VARCHAR</td>
+            <td>Worker</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>VARCHAR</td>
+            <td>Rishab</td>
+        </tr>
+        <tr>
+            <td>Position</td>
+            <td>VARCHAR</td>
+            <td>Worker</td>
+        </tr>
+    </table>
+    <br>
+
+    <!-- Customer Table -->
+    <table>
+        <caption><strong>Customer</strong></caption>
+        <tr>
+            <th>Attribute</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>Customer_ID</td>
+            <td>INT (Primary Key)</td>
+            <td>10143</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>VARCHAR</td>
+            <td>Harsh Patil</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>VARCHAR</td>
+            <td>harshpatil@gmail.com</td>
+        </tr>
+    </table>
+    <br><br>
+
+    <!-- Order Table -->
+    <table>
+        <caption><strong>Order</strong></caption>
+        <tr>
+            <th>Attribute</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>Order_ID</td>
+            <td>INT (Primary Key)</td>
+            <td>1022</td>
+        </tr>
+        <tr>
+            <td>Customer_ID</td>
+            <td>INT (Foreign Key)</td>
+            <td>10143</td>
+        </tr>
+        <tr>
+            <td>Store_ID</td>
+            <td>INT (Foreign Key)</td>
+            <td>143512</td>
+        </tr>
+        <tr>
+            <td>Order_Date</td>
+            <td>Date</td>
+            <td>27/09/2024</td>
+        </tr>
+    </table>
+    
+    <h3>Relationships</h3>
+    <ul>
+
+ <li><strong>Store to Employee</strong>: One-to-Many relationship. Each store can have multiple employees, but each employee works at only one store.</li>
+        <li><strong>Customer to Order</strong>: One-to-Many relationship. Each customer can place multiple orders, but each order belongs to a single customer.</li>
+        <li><strong>Store to Order</strong>: One-to-Many relationship. Each store can receive multiple orders, but each order is placed at a single store.</li>
+    </ul>
+</body>
+</html>
+
